@@ -1,4 +1,14 @@
-const sayHello = (name) => `Bonjour, ${name}, Bienvenu !`;
-const sayBye = (name) => `Goodbye, ${name}. À bientôt !`;
+const greetByTime = ()=> {
+    const hours = new Date().getHours();
+    if (hours >= 5 && hours < 12){
+        return "Bonjour";
+    } else {
+        return "Bonsoir";
+    }
+}
 
-module.exports = { sayHello, sayBye };
+
+const sayHello = (name) => `${greetByTime()}, ${name}, Bienvenue !`;
+const sayBye = (name) => `Au revoir, ${name}. À bientôt !`;
+
+module.exports = { sayHello, sayBye, greetByTime};
